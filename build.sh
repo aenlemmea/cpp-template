@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 clean() {
 	mkdir -p ./out
 	rm -rf out
@@ -9,7 +11,7 @@ clean() {
 
 if [ $# -ge 1 ]; then
 	case "$1" in
-		"clean")
+		"clean" | "cl" | "c" | "clea")
 			clean
 			;;
 	esac
@@ -18,4 +20,4 @@ fi
 
 mkdir -p out && cd out
 cmake .. -G "Unix Makefiles" -DCMAKE_EXPORT_COMPILE_COMMANDS=1
-mv compile_commands.json ../
+ln -s compile_commands.json ../
