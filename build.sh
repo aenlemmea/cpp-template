@@ -20,4 +20,9 @@ fi
 
 mkdir -p out && cd out
 cmake .. -G "Unix Makefiles" -DCMAKE_EXPORT_COMPILE_COMMANDS=1
-ln -s compile_commands.json ../
+# ln -s compile_commands.json ../
+
+### Although the above symlink method is popular/recommended. Straight up moving tends to be
+### better for my setup.
+
+mv compile_commands.json ../
